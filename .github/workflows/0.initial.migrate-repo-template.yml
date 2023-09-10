@@ -121,5 +121,5 @@ jobs:
 
       # Push changes
       - name: Push changes
-        uses: |
+        run: |
           git push origin:main
