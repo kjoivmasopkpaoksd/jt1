@@ -51,6 +51,9 @@ jobs:
 
       - name: Checkout project sources
         uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.CI_GITHUB_TOKEN }}
 
       - name: Migrate
         env:
@@ -114,10 +117,9 @@ jobs:
           git config --local user.name "GitHub Action"
           git add .
           git status
-#          git commit -m "chore: INITIAL Migrate Repo Template"
-#      # Push changes
-#      - name: Push changes
-#        uses: ad-m/github-push-action@v0.6.0
-#        with:
-#          branch: main
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git commit -m "chore: INITIAL Migrate Repo Template"
+
+      # Push changes
+      - name: Push changes
+        uses: |
+          git push origin:main
