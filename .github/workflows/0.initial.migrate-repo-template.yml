@@ -122,4 +122,4 @@ jobs:
       # Push changes
       - name: Push changes
         run: |
-          git push origin:main
+          git push origin main
